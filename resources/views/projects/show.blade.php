@@ -10,9 +10,7 @@
             </div>
         </div>
 
-        <div>
-            <a class="btn btn-primary" href="{{route('projects.edit',$project)}}">Modifica</a>
-        </div>
+
     </div>
 
     <div class="container my-3">
@@ -20,4 +18,13 @@
             {{$project->description}}
         </p>
     </div>
+
+    <div class="container">
+        <a class="btn btn-primary" href="{{route('projects.edit',$project)}}">Modifica</a>
+    </div>
+    <form action="{{route('projects.restore', $project)}}" method="POST">
+        @csrf
+
+        <input class="btn btn-success" type="submit" value="Ripristina">
+    </form>
 @endsection
